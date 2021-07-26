@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+    "title":"jaja",
+    "text":"khikhi",
+    "imageUrl":"hgkjhgkjgjgjg",
+    "userId":"60fd510fb8600511d45ed2cd"
+}
