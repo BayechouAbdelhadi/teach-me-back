@@ -1,9 +1,16 @@
-POST http://localhost:8080/api/posts
+POST http://localhost:8080/api/posts/create-post
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDE4ZmMxZGI1MTg0MzgyODhhOTM0YyIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3NzUwMTY5fQ.iYITtsWLVD5Q0vdmHBTZHYXGJ7s1-BVVrzqT8CAD0Po
 
 {
-    "title":"jaja",
-    "text":"khikhi",
-    "imageUrl":"hgkjhgkjgjgjg",
-    "userId":"60fd510fb8600511d45ed2cd"
+        "description": "565 hj kj",
+        "duration": "454545",
+        "price": "180",
+        "start_date": "2021-07-07",
+        "subject": "informatique",
+        "userId": "61018fc1db518438288a934c"
 }
+
+####
+GET http://localhost:8080/api/posts
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDE4ZmMxZGI1MTg0MzgyODhhOTM0YyIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3NzUwMTY5fQ.iYITtsWLVD5Q0vdmHBTZHYXGJ7s1-BVVrzqT8CAD0Po

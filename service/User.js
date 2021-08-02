@@ -6,12 +6,13 @@ const jwt =require ("jsonwebtoken");
 class UserService{
 
     createUser(userDto){
-        const {username,password}=userDto;
-        return cryptPassword(password)
-        .then(hash=>userDao.createUser(username,hash))
+        return cryptPassword(userDto.password)
+        .then(hash=>{
+            userDto= {...userDto,password:hash}
+            userDao.createUser(userDto)
+        })
         .catch(error=>console.error(error)); 
     }
-
     async authenticateUser(username,password){
             var authentication={error:null,token:null}
             await userDao.findUserByUsername(username)
@@ -22,6 +23,7 @@ class UserService{
                             if (result){
                                 const userData={
                                     id:user._id,
+                                    role:user.role
                                 }
                                 const token =jwt.sign(userData,process.env.SECRET_KEY);
 
@@ -65,6 +67,10 @@ class UserService{
     }
     deleteUser(id){
         return userDao.deleteUser(id)
+    }
+
+    findUserByUsername(username){
+        return userDao.findUserByUsername(username);
     }
 }
 

@@ -1,0 +1,16 @@
+GET http://localhost:8080/api/conversations/61018fc1db518438288a934c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5ZTFiOTg1NmU4MTc3OGU2NjU3MiIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3ODI1OTIzfQ.kdmoeOQJvkaVmz3eRrvCLEPJS8-6EY2fMwAek8gRiVo
+
+####
+POST http://localhost:8080/api/conversations/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5ZTFiOTg1NmU4MTc3OGU2NjU3MiIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3ODI1OTIzfQ.kdmoeOQJvkaVmz3eRrvCLEPJS8-6EY2fMwAek8gRiVo
+
+{
+    "senderId" :"61018fc1db518438288a934c",
+    "receiverId":"61049e1b9856e81778e66572"
+}
+
+###
+GET http://localhost:8080/api/conversations/61049e1b9856e81778e66572/61018fc1db518438288a934c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5ZTFiOTg1NmU4MTc3OGU2NjU3MiIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3ODI1OTIzfQ.kdmoeOQJvkaVmz3eRrvCLEPJS8-6EY2fMwAek8gRiVo

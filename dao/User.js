@@ -1,19 +1,19 @@
 const User=require ("../models/User.js");
 
 class UserDao{
-    async createUser(username,password){
+    async createUser(userDto){
 
-        const user=await new User({
-            username: username,
-            password: password,
-        }).save();
+        // const user=await new User({
+        //     username: username,
+        //     password: password,
+        // }).save();
+        const user=await new User(userDto).save();
         return user;
     }
     
     async findUserById(id){
-        return  await User.findOne({
-            _id:id
-        });
+        console.log(id)
+        return  await User.findById(id);
     }
     
     async findUserByUsername(username){
@@ -23,6 +23,7 @@ class UserDao{
     }
     async findAllUsers(){
         return  await User.find();
+        
     }
 
     async updateUser(id,data){

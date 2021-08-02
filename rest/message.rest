@@ -1,0 +1,13 @@
+GET http://localhost:8080/api/messages/conversation/6106b3a65d8fdb2be4f3a716
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5ZTFiOTg1NmU4MTc3OGU2NjU3MiIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3ODI1OTIzfQ.kdmoeOQJvkaVmz3eRrvCLEPJS8-6EY2fMwAek8gRiVo
+
+####
+POST http://localhost:8080/api/messages/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5ZTFiOTg1NmU4MTc3OGU2NjU3MiIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3ODI1OTIzfQ.kdmoeOQJvkaVmz3eRrvCLEPJS8-6EY2fMwAek8gRiVo
+
+{  
+    "conversationId":"6106cbecb8dd530e44672f17",
+    "text":"Machi cghlk dkhoul sou9 taboun dimak",
+    "sender" :"gikgjhgujggj"
+}

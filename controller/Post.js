@@ -18,5 +18,19 @@ class PostController {
                 });
             })
     }
+
+    async findAllPosts(req,res){
+        await postService.findAllPosts()
+        .then(posts=>{
+                res.status(200).json(posts);
+        })
+        .catch(error=>{
+            res.status(500).json({
+                message:"something went wrong",
+                error:error
+            });
+            console.error(error);
+        })
+    }
 }
 module.exports = new PostController()

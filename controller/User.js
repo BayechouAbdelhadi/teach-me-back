@@ -2,17 +2,35 @@ const userService =require("../service/User.js");
 
 class UserController {
     async createUser(req,res){
-        userService.createUser(req.body)
-        .then(user=>res.status(201).json({
-            id:user._id,
-            message:"user created successfully"
-        }))
+        userService.findUserByUsername(req.body.username)
+        .then(user=>{
+            if(user===null){
+                userService.createUser(req.body)
+                    .then(user=>res.status(201).json({
+                        message:"user created successfully"
+                    }))
+                    .catch(error=>{
+                        console.log(error)
+                        res.status(500).json({
+                            message:"something went wrong",
+                            error:error
+                        });
+                    })
+    
+            }
+            else
+                res.status(409).json({
+                    message:"user with that username already exists ",
+                });
+        })
         .catch(error=>{
+            console.log(error)
             res.status(500).json({
-                message:"something went wrong",
+                message:"something went wrong ",
                 error:error
             });
-        })
+        })        
+
     }
     
     async authenticateUser(req,res){
@@ -36,6 +54,8 @@ class UserController {
             user?res.status(200).json(user):res.status(404).json({message:"ressource not found "})
         })
         .catch(error=>{
+            console.log(error)
+
             res.status(500).json({
                 message:"something went wrong",
                 error:error
@@ -90,6 +110,7 @@ class UserController {
                 });
                 console.error(error);
             })
+    
     }
 }
 

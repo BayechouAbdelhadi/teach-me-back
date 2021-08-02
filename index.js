@@ -3,6 +3,8 @@ const express = require('express');
 const setUpConnection= require('./db');
 const userRoutes =require("./routes/user");
 const postRoutes =require("./routes/post");
+const conversationRoutes =require("./routes/conversation");
+const messageRoutes =require("./routes/message");
 
 
 //load env variables 
@@ -24,7 +26,10 @@ const port = process.env.PORT || 3000
 setUpConnection();
 
 app.use('/api/users', userRoutes);
-app.use('/api/posts', postRoutes);
+app.use('/api/posts',postRoutes);
+app.use('/api/conversations',conversationRoutes);
+app.use('/api/messages',messageRoutes);
+
 
 app.listen(port, () => {
     console.log(`listening on ${port}`);

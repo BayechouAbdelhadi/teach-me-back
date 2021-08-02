@@ -1,10 +1,13 @@
 const express = require('express');
+const isAuthenticated= require("../security")
+
 const postController =require('../controller/Post.js')
 
 
 const router = express.Router();
 
-router.post("/",postController.createPost);
+router.post("/create-post",isAuthenticated,postController.createPost);
+router.get("/",isAuthenticated,postController.findAllPosts);
 
 
 
