@@ -5,8 +5,8 @@ class PostDao {
         const post = await new Post(postDto).save();
         return post;
     }
-    async findAllPosts(){
-        return  await Post.find();  
+    async findAllPosts(modifiers){
+        return  await Post.find(modifiers).sort({createdAt:-1})
     }
 
 

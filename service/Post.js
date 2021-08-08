@@ -4,8 +4,8 @@ class PostService {
     createPost(postDto){
         return postDao.createPost(postDto);
     }
-    findAllPosts(){
-        return postDao.findAllPosts();
+    findAllPosts(modifiers){
+        return postDao.findAllPosts(modifiers);
     }
 }
 

@@ -23,7 +23,10 @@ class UserService{
                             if (result){
                                 const userData={
                                     id:user._id,
-                                    role:user.role
+                                    role:user.role,
+                                    nom:user.nom,
+                                    prenom:user.prenom,
+                                    location:JSON.parse(user.location),
                                 }
                                 const token =jwt.sign(userData,process.env.SECRET_KEY);
 

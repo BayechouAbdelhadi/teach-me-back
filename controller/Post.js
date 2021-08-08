@@ -20,7 +20,14 @@ class PostController {
     }
 
     async findAllPosts(req,res){
-        await postService.findAllPosts()
+        let modifiers={};
+        const filters=JSON.parse(req.query.filters)
+        if(filters.subject!==undefined)
+            modifiers.subject={"$regex":filters.subject}
+        if(filters.maxPrice!==undefined)
+            modifiers.price={"$lte":filters.maxPrice}
+        console.log(modifiers)
+        await postService.findAllPosts(modifiers)
         .then(posts=>{
                 res.status(200).json(posts);
         })

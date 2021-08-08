@@ -6,7 +6,8 @@ const postSchema=mongoose.Schema({
    duration:{type:Number,required:true},
    price:{type:Number,required:true},
    start_date:{type:String,required:true},
-   userId:{type:String,required:true}
+   userId:{type:String,required:true},
+   location:{type:String,required:true}
 
 },
 { timestamps: true }

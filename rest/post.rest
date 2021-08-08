@@ -14,3 +14,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDE4ZmMxZG
 ####
 GET http://localhost:8080/api/posts
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDE4ZmMxZGI1MTg0MzgyODhhOTM0YyIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3NzUwMTY5fQ.iYITtsWLVD5Q0vdmHBTZHYXGJ7s1-BVVrzqT8CAD0Po
+
+################################
+GET http://localhost:8080/api/posts?filters=%7B%22maxPrice%22:%2220%22%7D
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDE4ZmMxZGI1MTg0MzgyODhhOTM0YyIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNjI3NzUwMTY5fQ.iYITtsWLVD5Q0vdmHBTZHYXGJ7s1-BVVrzqT8CAD0Po

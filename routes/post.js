@@ -7,7 +7,8 @@ const postController =require('../controller/Post.js')
 const router = express.Router();
 
 router.post("/create-post",isAuthenticated,postController.createPost);
-router.get("/",isAuthenticated,postController.findAllPosts);
+//I us post method because I need to provide modifiers for a query coming in body request 
+router.get("/"/*,isAuthenticated*/,postController.findAllPosts);
 
 
 
