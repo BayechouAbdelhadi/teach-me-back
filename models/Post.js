@@ -8,7 +8,6 @@ const postSchema=mongoose.Schema({
    start_date:{type:String,required:true},
    userId:{type:String,required:true},
    location:{type:String,required:true}
-
 },
 { timestamps: true }
 )
