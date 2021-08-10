@@ -26,7 +26,6 @@ class PostController {
             modifiers.subject={"$regex":filters.subject}
         if(filters.maxPrice!==undefined)
             modifiers.price={"$lte":filters.maxPrice}
-        console.log(modifiers)
         await postService.findAllPosts(modifiers)
         .then(posts=>{
                 res.status(200).json(posts);
