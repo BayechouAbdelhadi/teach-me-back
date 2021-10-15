@@ -2,6 +2,10 @@ const  Express = require('express') ;
 const  app = Express();
 const http = require('http');
 const server = http.createServer(app);
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+
+
 //const { Server } = require("socket.io");
 const io = require("socket.io")(server,{
     cors: {
@@ -34,10 +38,28 @@ const port = process.env.PORT || 3000
 
 setUpConnection();
 
+//Documentation
+const options = {
+  swaggerDefinition: {
+    info: {
+      title: 'Teach Me',
+      description:"API teachMe: Application d'accompagenement scolaire",
+      contacts: {
+        name: 'BAYECHOU Abdelhadi',
+      },
+      servers: ['http://localhost:8080']
+    },
+  },
+  apis: [ __dirname+'/routes/*.js'], // files containing annotations as above
+};
+
+const swaggerDocument = swaggerJsdoc(options);
+app.use('/docs',swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/users', userRoutes);
 app.use('/api/posts',postRoutes);
 app.use('/api/conversations',conversationRoutes);
 app.use('/api/messages',messageRoutes);
+
 ///Sockets 
 
   let users = [];
@@ -83,7 +105,7 @@ app.use('/api/messages',messageRoutes);
     });
     
   });
-  
+
 
 server.listen(port, () => {
     console.log(`listening on ${port}`);

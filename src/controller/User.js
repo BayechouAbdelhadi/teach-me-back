@@ -79,9 +79,9 @@ class UserController {
 
     async updateUser(req,res){
         const id =req.params.id;
-        const data =req.body.data;
-        data._id=id;
-        await userService.updateUser(id,data)
+        let userDto=req.body;
+        userDto={...userDto,_id:id};
+        await userService.updateUser(id,userDto)
             .then(user=>{
                 res.status(200).json({
                     mesage:"user updated successfully"

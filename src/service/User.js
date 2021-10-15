@@ -21,18 +21,19 @@ class UserService{
                     await compare(password,user.password).
                         then(result=>{
                             if (result){
-                                const userData={
+                                let userData={
                                     id:user._id,
                                     role:user.role,
                                     nom:user.nom,
                                     prenom:user.prenom,
-                                    location:JSON.parse(user.location),
+                                }
+                                if(user.location[0]==='{')
+                                    userData={...userData,location:JSON.parse(user.location)
                                 }
                                 const token =jwt.sign(userData,process.env.SECRET_KEY);
 
                                 authentication = {...authentication,token:token}
-
-                                
+   
                             }
                             else {  
                                 authentication = {...authentication,error:"incorrect password"}

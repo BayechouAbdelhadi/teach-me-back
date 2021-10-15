@@ -1,6 +1,6 @@
 GET http://localhost:8080/api/users/60fd627960d5a82050c00658
 ###
-GET http://localhost:8080/api/users/
+GET http://localhost:8080/api/users/6120d222a5c1ce0015275b58
 ###
 POST http://localhost:8080/api/users/register
 Content-Type: application/json
@@ -29,8 +29,8 @@ POST http://localhost:8080/api/users/login
 Content-Type: application/json
 
 {
-    "username":"jaja",
-    "password":"1234567"
+    "username":"saida@gmail.com",
+    "password":"123456"
 }
 
 ###
